@@ -4,7 +4,7 @@ const forecast =require('./utils/forecast');
 const path = require('path');
 const Mathfun = require('./callbackExample')
 const app = express();
-
+const port = process.env.PORT || 3000;
 Mathfun.divide(1, 0, (err, result)=>{
           if(err) {
               console.log(err);
@@ -60,6 +60,6 @@ app.get('/weather',(req,res)=>{
   }
 })
 
-app.listen(3000,()=>{
-  console.log('server is running!!');
+app.listen(port,()=>{
+  console.log('server is running!!' + port);
 })
